@@ -10,3 +10,7 @@
      * click on index.html 
      * if above steps do not work
               . Right click on index.html and then click open with option and choose any browser.
+
+
+
+[Click here](https://atulsingh7.github.io/Projects/) to visit the page or goto https://atulsingh7.github.io/Projects/
