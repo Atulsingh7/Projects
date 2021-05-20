@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Dashboard</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1URJkOn6jxxCHrXmtsfY4GCRsldhs_ebUXQ&usqp=CAU">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area" >
+        <h3>C <span>Cube</span></h3>
+        <span style="color: white;">Experiential Learning</span>
+      </div>
+      <div class="right_area">
+        <a href="#" class="logout_btn">Logout</a>
+      </div>
+    </header>
+    <!--header area end-->
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+      <div class="nav_bar">
+        <!-- <i class="fa fa-user" id="profile_view" aria-hidden="true"></i> -->
+        <img src="chemistry.png" class="mobile_profile_image" alt="">
+        <i class="fa fa-bars nav_btn"></i>
+      </div>
+      <div class="mobile_nav_items">
+        <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+        <a href="#"><i class="fa fa-sticky-note"></i><span>Upcoming lesson</span></a>
+        <a href="#"><i class="fas fa-table onclicktable"></i><span>My tasks</span></a>
+        <a href="#"><i class="fas fa-th"></i><span>Leaderborad</span></a>
+        <a href="#"><i class="fas fa-info-circle"></i><span>My courses</span></a>
+        <a href="#"><i class="fa fa-book"></i><span>Homeworks</span></a>
+
+         <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+      </div>
+    </div>
+    <!--mobile navigation bar end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+      <div class="profile_info">
+        <img src="chemistry.png" class="profile_image" alt="">
+        <!-- <i class="fa fa-user" id="profile_view" aria-hidden="true"></i> -->
+        <h4>Robin</h4>
+      </div>
+      <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+      <a href="#"><i class="fa fa-sticky-note"></i><span>Upcoming lesson</span></a>
+      <a href="#"><i class="fas fa-table onclicktable"></i><span>My tasks</span></a>
+      <a href="#"><i class="fas fa-th"></i><span>Leaderborad</span></a>
+      <a href="#"><i class="fas fa-info-circle"></i><span>My courses</span></a>
+      <a href="#"><i class="fa fa-book"></i><span>Homeworks</span></a>
+      <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+      
+    </div>
+    <!--sidebar end-->
+
+    <div class="content">
+      <div class="card">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+      <div class="card">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+      <div class="card">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+      <div id="piechart"></div>
+    </div>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.nav_btn').click(function(){
+        $('.mobile_nav_items').toggleClass('active');
+      });
+    });
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    <script type="text/javascript">
+    // Load google charts
+      
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    
+    // Draw the chart and set the chart values
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Work', 8],
+      ['Eat', 2],
+      ['TV', 4],
+      ['Gym', 2],
+      ['Sleep', 8]
+    ]);
+    
+      // Optional; add a title and set the width and height of the chart
+      var options = {'title':'My Average Day', 'width':550, 'height':400};
+    
+      // Display the chart inside the <div> element with id="piechart"
+    
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      chart.draw(data, options);
+    }
+
+
+
+
+    </script>
+    
+    
+
+  </body>
+</html>
+
+
